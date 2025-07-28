@@ -1,9 +1,10 @@
 services:
   app:
+    restart: unless-stopped
     build:
       context: ./backend
     container_name: laravel_app
-    command: php artisan serve --host=0.0.0.0 --port=8000
+    command: bash start.sh
     ports:
       - "8000:8000"
     volumes:
